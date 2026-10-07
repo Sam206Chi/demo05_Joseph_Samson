@@ -2,32 +2,133 @@
 <html lang="en">
 
 <head>
-    <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="My 1800 App">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> sleep & health Tracker </title>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Other libraries go here -->
-
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
 
+            <a class="navbar-brand" href="#">
+                <img src="data:image/jpeg;base64,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" height="36" class="me-2" alt="Logo">
+                sleep & health Tracker
+            </a>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <!-- Link to scripts of your own -->
-    <!-- <script type="module" src="./src/main.js"></script> -->
+            <div class="collapse navbar-collapse" id="navbarNav">
 
+                <!-- Left-side links -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            my account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Saved hikes</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Right-side search -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3.2 Welcome banner -->
+    <div class="container mt-4">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+
+                <h1 class="display-5 fw-bold">Welcome are you ready to know your sleeping patterns!</h1>
+
+                <p class="col-md-8 fs-4">
+                    Sign up to save your progress.
+                </p>
+
+                <button onclick="window.location.href='login.html'" class="btn btn-success btn-lg" type="button">
+                    Login / Signup
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 3.3 Card grid -->
+    <div class="container mb-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzUg-q6c9PL7oAyDOV0ZVWSLNRceZ6v560bUIt3_JJQg&s=10" class="card-img-top" alt="Trail 1">
+                    <div class="card-body">
+                        <h5 class="card-title"> Today </h5>
+                        <p class="card-text"> you slept for 8 hours.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Excellent</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxTFDnjQjP4B4vSiOwGqTryfyr3qEhQrbv6ODNhNu3Eg&s=10" class="card-img-top" alt="Trail 2">
+                    <div class="card-body">
+                        <h5 class="card-title"> Yesterday </h5>
+                        <p class="card-text">you slept for 5 hours.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"> Terrible </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYt9boJz71o4KUhn3YH7DhdKbb_QTkKbi-_-fb6tDMJw&s=10" class="card-img-top" alt="Trail 3">
+                    <div class="card-body">
+                        <h5 class="card-title"> 2 Days ago</h5>
+                        <p class="card-text"> you slept for 6.5 hours.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"> Good </small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
